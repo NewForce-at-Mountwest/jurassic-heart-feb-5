@@ -1,0 +1,25 @@
+// this function expects a dinosaur name and a url for an image
+const dinoCard = (name, imageUrl) => {
+    return `
+    <div class="card" style="width: 18rem;">
+    <img src=${imageUrl} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${name}</h5>
+      <button type="button" id="hot-btn" class="btn btn-success">Hot</button>
+      <button type="button" id="not-btn" class="btn btn-danger">Not</button>
+    </div>
+  </div>`
+}
+
+document.querySelector("#search-results").addEventListener("click", () => {
+    const wholeCard =  event.target.parentNode.parentNode;
+    if(event.target.id === "hot-btn"){
+        console.log("You clicked on the hot button!");
+        const dinoCard = wholeCard.cloneNode(true);
+        document.querySelector("#my-matches").appendChild(dinoCard);
+        wholeCard.remove();
+    } else if (event.target.id === "not-btn"){
+        console.log("you clicked on the not button!")
+        wholeCard.remove()
+    }
+})

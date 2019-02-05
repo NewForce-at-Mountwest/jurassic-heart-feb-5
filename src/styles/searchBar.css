@@ -1,0 +1,11 @@
+.search-container{
+    padding: 0.5em;
+    margin: auto;
+    width: 60vw;
+}
+
+.search-container input{
+    width: 18em;
+    display: inline-block;
+}
+
