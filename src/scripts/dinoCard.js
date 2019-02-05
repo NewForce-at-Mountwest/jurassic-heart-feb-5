@@ -1,4 +1,6 @@
 // this function expects a dinosaur name and a url for an image
+
+// hotOrNot should be a boolean- if true, print hot or not buttons and if false print message/ cancel buttons
 const dinoCard = (name, imageUrl) => {
     return `
     <div class="card" style="width: 18rem;">
@@ -9,7 +11,19 @@ const dinoCard = (name, imageUrl) => {
       <button type="button" id="not-btn" class="btn btn-danger">Not</button>
     </div>
   </div>`
+
+  // if(hotOrNot){
+    //     printButtons("Hot", "Not")
+    // } else {
+
+    // }
 }
+
+// const printButtons = (buttonOneText, buttonTwoText) => {
+//  return ` `
+// }
+
+
 
 document.querySelector("#search-results").addEventListener("click", () => {
     const wholeCard =  event.target.parentNode.parentNode;
@@ -23,3 +37,14 @@ document.querySelector("#search-results").addEventListener("click", () => {
         wholeCard.remove()
     }
 })
+
+// function that just prints to dom
+const printDinoCard = (dinoName, imageUrl) => {
+    const dinoHTMLString = dinoCard(dinoName, imageUrl);
+
+    // put the resulting HTML string in the DOM
+    document.querySelector(
+      "#search-results"
+    ).innerHTML += dinoHTMLString;
+
+}
